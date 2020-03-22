@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1053568883748",
+    "firebase_url": "https://transport-3e82a.firebaseio.com",
+    "project_id": "transport-3e82a",
+    "storage_bucket": "transport-3e82a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053568883748:android:4ce16da32bf483455b8cb1",
+        "android_client_info": {
+          "package_name": "com.example.transport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053568883748-g8dlm7eh3npv78n24vdu71gdtcdts2jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz8fA7zvTSKCEumZxsDjTt5OIXjYV9qE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053568883748-g8dlm7eh3npv78n24vdu71gdtcdts2jc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
