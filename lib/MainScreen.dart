@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:transport/FirstScreen.dart';
+import 'package:transport/MorningScreen.dart';
 import 'package:transport/AfternoonScreen.dart';
 import 'package:transport/EveningScreen.dart';
-
 
 class MainScreen extends StatelessWidget {
   @override
@@ -19,15 +18,17 @@ class MainScreen extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: ListView(
-          // crossAxisCount: 3,
+            // crossAxisCount: 3,
             children: <Widget>[
               Card(
                 elevation: 10,
                 margin: EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) =>FirstScreen()),);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MorningScreen()),
+                    );
                   },
                   splashColor: Colors.lightBlueAccent,
                   child: Row(
@@ -49,14 +50,16 @@ class MainScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
               Card(
                 elevation: 10,
                 margin: EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) =>AfternoonScreen()),);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AfternoonScreen()),
+                    );
                   },
                   splashColor: Colors.lightBlueAccent,
                   child: Row(
@@ -83,8 +86,10 @@ class MainScreen extends StatelessWidget {
                 margin: EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) =>EveningScreen()),);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EveningScreen()),
+                    );
                   },
                   splashColor: Colors.lightBlueAccent,
                   child: Row(
@@ -106,13 +111,8 @@ class MainScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ]
-        ),
-
+            ]),
       ),
     );
-  }//widget build
+  } //widget build
 } // class ends
-
-
-
