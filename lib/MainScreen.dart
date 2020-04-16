@@ -3,7 +3,7 @@ import 'package:transport/MorningScreen.dart';
 import 'package:transport/AfternoonScreen.dart';
 import 'package:transport/EveningScreen.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreenTransport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
