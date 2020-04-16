@@ -9,18 +9,19 @@ class MHSearch extends StatelessWidget {
       appBar: AppBar(
         title: Text("Search location"),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.search),onPressed: () {
-            showSearch(context: context, delegate: DataSearch());
-          })
+          IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                showSearch(context: context, delegate: DataSearch());
+              })
         ],
       ),
-
     );
   }
 }
 
-class DataSearch extends SearchDelegate<String>{
-  final cities=[
+class DataSearch extends SearchDelegate<String> {
+  final cities = [
     "COLLEGE",
     "GANDHINAGAR",
     "YALAKKI SHETTER COLONY",
@@ -56,8 +57,6 @@ class DataSearch extends SearchDelegate<String>{
     "CHETAN COLLEGE",
     "SIRUR PARK SIGNAL",
     "KADASIDDESHAWR ARTS COLLEGE",
-
-
     "college",
     "gandhinagar",
     "yalakki shetter colony",
@@ -93,8 +92,6 @@ class DataSearch extends SearchDelegate<String>{
     "chetan college",
     "sirur park signal",
     "kadasiddeshawr arts college",
-
-
     "College",
     "Gandhinagar",
     "Yalakki Shetter Colony",
@@ -130,11 +127,9 @@ class DataSearch extends SearchDelegate<String>{
     "Chetan College",
     "Sirur Park Signal",
     "Kadasiddeshawr Arts College"
-
   ];
 
   final recentCities = [
-
     "these are the most recetly searched places",
     "SEARCH FORMAT CAN BE: Upper Case/ Lower Case/ Title Case",
     "bvbcet",
@@ -147,9 +142,12 @@ class DataSearch extends SearchDelegate<String>{
     // TODO: implement buildActions
     //  actions for app bar
     return [
-      IconButton(icon: Icon(Icons.clear),onPressed: () {
-        query = "";
-      })];
+      IconButton(
+          icon: Icon(Icons.clear),
+          onPressed: () {
+            query = "";
+          })
+    ];
   }
 
   @override
@@ -176,26 +174,27 @@ class DataSearch extends SearchDelegate<String>{
       margin: EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          Navigator.push(context,
-            MaterialPageRoute(builder: (context) =>TeachersTimeTables()),);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TeachersTimeTables()),
+          );
         },
         splashColor: Colors.lightBlueAccent,
         child: Row(
-                 mainAxisSize: MainAxisSize.min,
-                 children: <Widget>[
-                   
-                   Flexible(
-                     child: Text(query,
-                      
-                       style: new TextStyle(fontSize: 25.0),
-                       textAlign: TextAlign.center,
-                     ),
-                     fit: FlexFit.tight,
-                   )
-                 ],
-               ),
-        
-       // child: Text(query),
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Flexible(
+              child: Text(
+                query,
+                style: new TextStyle(fontSize: 25.0),
+                textAlign: TextAlign.center,
+              ),
+              fit: FlexFit.tight,
+            )
+          ],
+        ),
+
+        // child: Text(query),
       ),
     );
   }
@@ -204,35 +203,30 @@ class DataSearch extends SearchDelegate<String>{
   Widget buildSuggestions(BuildContext context) {
     // TODO: implement buildSuggestions
     // show suggestion
-    final suggestionList= query.isEmpty?recentCities
-        :cities.where((p)=>p.startsWith(query)).toList();
+    final suggestionList = query.isEmpty
+        ? recentCities
+        : cities.where((p) => p.startsWith(query)).toList();
 
-    return ListView.builder(itemBuilder: (context,index)=>ListTile(
-      onTap: () {
-        showResults(context);
-      },
-      leading: Icon(Icons.location_city),
-      title: RichText(
-        text: TextSpan(
-            text: suggestionList[index].substring(0,query.length),
-            style:
-            TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            children: [TextSpan(
-                text:suggestionList[index].substring(query.length),
-                style: TextStyle(color: Colors.grey)
-            ),
-            ]//children
+    return ListView.builder(
+      itemBuilder: (context, index) => ListTile(
+        onTap: () {
+          showResults(context);
+        },
+        leading: Icon(Icons.location_city),
+        title: RichText(
+          text: TextSpan(
+              text: suggestionList[index].substring(0, query.length),
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              children: [
+                TextSpan(
+                    text: suggestionList[index].substring(query.length),
+                    style: TextStyle(color: Colors.grey)),
+              ] //children
+              ),
         ),
       ),
-    ),
       itemCount: suggestionList.length,
     );
   }
-
 }
-
-
-
-
-
-
